@@ -1,0 +1,15 @@
+server:
+  port: 17990
+eureka:
+  client:
+    register-with-eureka: false #是否将自己注册到eureka中，因为在DemoApplication中声明了@EnableEurekaServer 所以不需要注册
+    fetch-registry: false # 是否从eureka获取注册信息,由于它本身就是服务器所以不需要获取信息。除非是集群
+    service-url:
+      defaultZone: http://root:13hbjhdgda234kfhsd@localhost:${server.port}/eureka/
+spring:
+  application:
+    name: hqf-eureka-service
+  security:
+    user:
+      name: root
+      password: 13hbjhdgda234kfhsd
